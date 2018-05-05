@@ -1,16 +1,21 @@
 <template>
-  <div id="app">
-    <div class="banner">
+  <div id="app" class="bootstrap-wrapper">
+    <div class="col-sm-8 col-md-8 col-xl-8 banner">
       <img src="./assets/logodiners.png" class="bannerIco">
+      <div class="linkDiv">
+      <a href="https://www.w3schools.com">PayClub </a>
+      <span style="color: white">|</span>
+      <a href="https://www.w3schools.com"> AppMovil</a>
+      </div>
     </div>
-    <div class="containerGeneral">
+    <div class="col-sm-8 col-md-8 col-xl-8 containerGeneral">
       <ul>
         <li v-for= "ch in chats" style="list-style:none" >
-          <app-conversation-user v-bind:mensaje="ch.mensaje" v-bind:tipoContenedor="ch.tipoComponente" v-bind:tipoIcono="ch.tipoIcono"></app-conversation-user>
+          <app-conversation-user v-bind:nombreCliente="ch.nombreCliente" v-bind:mensaje="ch.mensaje" v-bind:tipoContenedor="ch.tipoComponente" v-bind:tipoIcono="ch.tipoIcono"></app-conversation-user>
         </li>
       </ul>
     </div>
-    <div class="containerGeneralInput">
+    <div class="col-sm-8 col-md-8 col-xl-8 containerGeneralInput">
       <input type="text" class="input" v-on:keyup.enter="addChat" v-model="userInput">
       <button v-on:click="addChat"  class="iconSend" style="border: 0; background: transparent"><img src="./assets/send.png" style="width: 30px; height: 30px;" ></button>
     </div>
@@ -27,16 +32,23 @@ export default {
     }
   },
   methods: {
+    // función que añade un chat del usuario a la conversación
     addChat: function () {
+      if (this.userInput === '') {
+        return
+      }
       var newChat = {
         mensaje: this.userInput,
-        tipoComponente: 'containerCliente',
+        tipoComponente: 'col-sm-8 col-md-8 col-xl-8 containerCliente',
         tipo: 'cliente',
+        nombreCliente: 'Cristian López',
+        fechaHora: '',
         tipoIcono: 'iconChatUser'
       }
       this.chats.push(newChat)
       this.userInput = ''
     },
+    // función que pone el scroll al final para ver el último mensaje
     scrollToEnd: function () {
       var container = document.querySelector('.containerGeneral')
       var scrollHeight = container.scrollHeight
@@ -77,7 +89,8 @@ export default {
 }
 
 .containerGeneral{
-  border: 0px solid #dedede;
+  background-image:  url("./assets/background.png");
+  border: 1px solid #dedede;
   background-color: #fff;
   border-radius: 2px;
   padding-left: 10px;
@@ -88,24 +101,24 @@ export default {
 
 .containerGeneralInput{
   border: 0px solid #dedede;
-  background-color: #fff;
+  background-color: #F1F2D5;
   border-radius: 2px;
   width: 530px;
-  height: 100px;
+  height: 85px;
 }
 
 .input{
   border: 1px solid #dedede;
   background-color: #fff;
   border-radius: 2px;
-  margin: 10px 0;
-  width: 90%;
+  margin: 18px 0;
+  width: 83%;
   height: 50%;
   float: left;
 }
 .containerCliente {
   border: 1px solid #dedede;
-  background-color: #f1f1f1;
+  background-color: #F1F2D5;
   border-radius: 30px;
   padding: 10px;
   margin-right: 5px;
@@ -133,7 +146,18 @@ export default {
 
 .textClienteAndrea{
   margin: 5px;
+  margin-top: 20px;
   width: 88%;
+  max-width: 88%;
+  word-wrap: break-word;
+}
+.textClienteAndreaHeader{
+  font-size: 12px;
+  font-weight: bold;
+  color: #006699;
+  width: 300px;
+  height: 15px;
+  position:absolute;
 }
 
 .iconChatDiners{
@@ -163,12 +187,30 @@ export default {
 }
 
 .iconSend{
-  margin-top: 12px;
+  margin-top: 18px;
   margin-left: 5px;
   width: 40px;
   height: 40px;
   }
 
+.linkDiv{
+  float: right;
+  padding:25px;
+  font-size: 16px;
+  }
 
+a {
+  text-decoration:none;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
 
 </style>
