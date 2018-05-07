@@ -26,6 +26,14 @@
   position: relative;
   text-align: left;
 }
+
+.bannerBlack{
+  background-color: #000;
+  width: 540px;
+  height: 70px;
+  position: relative;
+  text-align: left;
+}
 .bannerIco{
   padding-top: 10px;
   position: absolute;
@@ -43,9 +51,28 @@
   overflow:scroll;
 }
 
+.containerGeneralBlack{
+  border: 1px solid #dedede;
+  background-color: #000;
+  opacity: 0.8;
+  border-radius: 2px;
+  padding-left: 10px;
+  width: 530px;
+  height: 430px;
+  overflow:scroll;
+}
+
 .containerGeneralInput{
   border: 0px solid #dedede;
   background-color: #F1F2D5;
+  border-radius: 2px;
+  width: 530px;
+  height: 85px;
+}
+
+.containerGeneralInputBlack{
+  border: 0px solid #dedede;
+  background-color: #000;
   border-radius: 2px;
   width: 530px;
   height: 85px;
@@ -59,6 +86,18 @@
   width: 83%;
   height: 50%;
   float: left;
+}
+
+.inputBlack{
+  border: 1px solid #dedede;
+  background-color: #696960;
+  opacity: 0.8;
+  border-radius: 2px;
+  margin: 18px 0;
+  width: 83%;
+  height: 50%;
+  float: left;
+  color: white;
 }
 .containerCliente {
   border: 1px solid #dedede;
