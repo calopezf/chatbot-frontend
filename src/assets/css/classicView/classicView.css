@@ -1,23 +1,3 @@
-<template>
-  <div id="app" >
-    <router-view></router-view>
-  </div>
-</template>
-
-<script>
-
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 20px;
-  margin-left: 30%;
-}
 
 .banner{
   background-color: #006699;
@@ -33,7 +13,7 @@
 }
 
 .containerGeneral{
-  background-image:  url("./assets/background.png");
+  background-image:  url("/src/assets/background.png");
   border: 1px solid #dedede;
   background-color: #fff;
   border-radius: 2px;
@@ -112,7 +92,7 @@
 }
 
 .iconChatDiners{
-  background-image:  url("./assets/DINERS.png");
+  background-image:  url("/src/assets/DINERS.png");
   background-repeat: no-repeat;
   width: 40px; /*or your image's width*/
   height: 40px; /*or your image's height*/
@@ -120,7 +100,7 @@
   padding: 0;
   }
 .iconChatUser{
-  background-image:  url("./assets/USER.png");
+  background-image:  url("/src/assets/USER.png");
   background-repeat: no-repeat;
   width: 40px; /*or your image's width*/
   height: 40px; /*or your image's height*/
@@ -172,5 +152,3 @@ ul{
   padding: 0;
   list-style-type: none;
 }
-
-</style>
