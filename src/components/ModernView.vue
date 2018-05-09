@@ -1,17 +1,19 @@
 <template>
-  <div class="bootstrap-wrapper">
-    <div class="col-sm-8 col-md-8 col-xl-8 bannerBlack">
+  <div>
+    <div class="bannerBlack">
       <img src="../assets/logodiners.png" class="bannerIco">
       <div class="linkDiv">
-        <a href="https://www.w3schools.com">PayClub </a>
+        <a href="#">PayClub </a>
         <span style="color: white">|</span>
-        <a href="https://www.w3schools.com"> AppMovil</a>
+        <a href="#"> AppMovil</a>
       </div>
     </div>
-    <div class="col-sm-8 col-md-8 col-xl-8 containerGeneralBlack">
+    <div class="containerGeneralBlack">
       <div class="fechaActual"><span>{{ new Date() | moment("dddd, D MMMM  YYYY") }}</span></div>
       <ul style="list-style: none;">
-        <li v-for= "ch in chats" style="list-style:none" >
+        <li v-for="ch in chats"
+            :key="ch.id"
+            style="list-style:none" >
           <app-conversation-user v-bind:nombreCliente="ch.nombreCliente" v-bind:fechaHora="ch.fechaHora" v-bind:mensaje="ch.mensaje" v-bind:tipoContenedor="ch.tipoComponente" v-bind:tipoIcono="ch.tipoIcono"></app-conversation-user>
         </li>
       </ul>
@@ -102,6 +104,40 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style>
+  .bannerBlack{
+    background-color: #000;
+    width: 540px;
+    height: 70px;
+    position: relative;
+    text-align: left;
+  }
+  .containerGeneralBlack{
+    border: 1px solid #dedede;
+    background-color: #000;
+    opacity: 0.8;
+    border-radius: 2px;
+    padding-left: 10px;
+    width: 530px;
+    height: 430px;
+    overflow:scroll;
+  }
+  .containerGeneralInputBlack{
+    border: 0px solid #dedede;
+    background-color: #000;
+    border-radius: 2px;
+    width: 530px;
+    height: 85px;
+  }
+  .inputBlack{
+    border: 1px solid #dedede;
+    background-color: #696960;
+    opacity: 0.8;
+    border-radius: 2px;
+    margin: 18px 0;
+    width: 83%;
+    height: 50%;
+    float: left;
+    color: white;
+  }
 </style>

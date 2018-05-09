@@ -5,7 +5,6 @@ import App from './App'
 import router from './router'
 import VueChatScroll from 'vue-chat-scroll'
 import './assets/css/bootstrap/bootstrap-grid.css'
-import './assets/css/classicView/classicView.css'
 
 // Creación de scroll para chat
 Vue.use(VueChatScroll)
@@ -22,7 +21,10 @@ Vue.config.productionTip = false
 // Creación de componente dinámico de conversa usuario y chatbot
 Vue.component('app-conversation-user', {
   props: ['nombreCliente', 'fechaHora', 'mensaje', 'tipoContenedor', 'tipoIcono'],
-  template: '<div :class="tipoContenedor"><div v-if="tipoIcono === \'iconChatDiners\'" :class="tipoIcono"></div><div class="col-sm-7 col-md-7 col-xl-7 textClienteAndreaHeader">{{nombreCliente}}<div class="hourClienteAndrea">{{fechaHora}}</div></div><div class="textClienteAndrea">{{ mensaje}}</div><div v-if="tipoIcono === \'iconChatUser\'" :class="tipoIcono"></div></div>'
+  template: '' +
+  '<div :class="tipoContenedor">' +
+    '<div class="textochat">{{ mensaje}}</div>' +
+  '</div>'
 })
 /* eslint-disable no-new */
 new Vue({
