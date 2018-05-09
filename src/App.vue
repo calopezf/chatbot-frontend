@@ -17,14 +17,6 @@
   margin-top: 0px;
 }
 
-.nombreChat{
-  width: 15px; /*or your image's width*/
-  height: 150px; /*or your image's height*/
-  color: blue;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
 ::-webkit-scrollbar {
   width: 0px;  /* remove scrollbar space */
   background: transparent;  /* optional: just make scrollbar invisible */

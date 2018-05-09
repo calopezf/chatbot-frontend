@@ -1,7 +1,7 @@
 <template>
   <div style="height: auto">
     <div class="banner">
-      <img src="../assets/logodiners.png" class="bannerIco">
+      <img src="../assets/logodiners.png">
     </div>
     <div class="container">
       <div class="fechaActual">
@@ -73,7 +73,7 @@ export default {
     // },
     // Llamada a servicio sin datos
     created: function () {
-      axios.get('http://www.mocky.io/v2/5aef7e332f00006600739bcb')
+      axios.get('http://www.mocky.io/v2/5af34e183400004f00770498')
         .then(response => {
           // JSON responses are automatically parsed.
           this.respuesta = response.data
@@ -93,7 +93,7 @@ export default {
     },
     // Llamada a servicio con parámetros
     postPost: function () {
-      axios.post('http://www.mocky.io/v2/5aef7dbf2f00006400739bca', {
+      axios.post('http://www.mocky.io/v2/5af34a2e3400005600770480', {
         body: this.postBody
       })
         .then(response => {})
@@ -184,7 +184,7 @@ export default {
     font-size: 10px;
   }
   .burbuja-der {
-    background-color: #0088cc;
+    background-color: #3D8BBC;
     border: 0px solid #006699;
     margin-top: 10px;
     margin-bottom: 20px;

@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueChatScroll from 'vue-chat-scroll'
-import './assets/css/bootstrap/bootstrap-grid.css'
 
 // Creación de scroll para chat
 Vue.use(VueChatScroll)
